@@ -41,3 +41,17 @@ func TestGenerator_GeneratePasswordWithCapitalization(t *testing.T) {
 	password := g.GeneratePasswordString()
 	assert.Equal(t, "Muh Muh Muh Muh", password, "not the correct capitalization")
 }
+
+func TestGenerator_SetLanguage(t *testing.T) {
+	g := NewGenerator()
+	err := g.UseLangWordlist("de")
+	assert.Equal(t, nil, err, "Setting language to \"de\" should not raise an error")
+	password := g.GeneratePasswordString()
+	assert.Equal(t, 4, len(strings.Split(password, " ")), "not the right number of words for default settings")
+}
+
+func TestGenerator_SetInvalidLanguageRaisesError(t *testing.T) {
+	g := NewGenerator()
+	err := g.UseLangWordlist("muh")
+	assert.EqualError(t, err, "language \"muh\" has no matching wordlist", "not the correct error message")
+}
