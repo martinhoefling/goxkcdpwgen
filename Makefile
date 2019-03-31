@@ -9,7 +9,7 @@ fmt:
 	$(GO) fmt $(PACKAGES)
 
 .PHONY: tests
-tests: test vet lint errcheck megacheck
+tests: test vet lint
 
 .PHONY: vet
 vet:
