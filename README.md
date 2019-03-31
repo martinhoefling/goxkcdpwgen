@@ -28,6 +28,8 @@ All params
     -n int
             Number of words to generate a password from (default 4)
     -s    Use eff_short instead of eff_long as wordlist
+    -N count
+            Number of passwords to generate
 
 Sample execution
 
