@@ -4904,7 +4904,6 @@
   4904	dorfherr
   4905	dorfhund
   4906	dorfhure
-  4907	dorfjude
   4908	dorfkern
   4909	dorfkind
   4910	dorfkino
@@ -9445,7 +9444,6 @@
   9445	hofierst
   9446	hofiert
   9447	hofjagd
-  9448	hofjude
   9449	hofkarte
   9450	hofkasse
   9451	hofkatze
@@ -10287,7 +10285,6 @@
  10287	juda
  10288	judaist
  10289	judas
- 10290	jude
  10291	judith
  10292	judiz
  10293	judo
@@ -15613,7 +15610,6 @@
  15613	ostjapan
  15614	ostjava
  15615	ostjoch
- 15616	ostjude
  15617	ostkamin
  15618	ostkante
  15619	ostkap
@@ -21306,7 +21302,6 @@
  21306	vollhof
  21307	vollholz
  21308	vollhuf
- 21309	volljude
  21310	vollkorn
  21311	vollkost
  21312	volllaie
