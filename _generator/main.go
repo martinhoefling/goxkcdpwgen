@@ -17,7 +17,6 @@ import (
 var wordlists = map[string]string{
 	"eff_large_wordlist":       "en",
 	"eff_short_wordlist_2_0":   "en_eff_short",
-	"de_wordlist": "de",
 }
 
 var fn = flag.String("o", "xkcdpwgen/generated.go", "Name of the generated file")
