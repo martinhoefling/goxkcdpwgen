@@ -11,7 +11,7 @@ import (
 
 var wordcount = flag.Int("n", 4, "Number of words to generate a password from")
 var delim = flag.String("d", " ", "Delimiter to separate words")
-var lang = flag.String("l", "en", "Use non english language with custom list, currently only de = german is supported")
+var lang = flag.String("l", "en", "Use non english language with custom list, currently no other languages are supported")
 var effshort = flag.Bool("s", false, "Use eff_short instead of eff_long as wordlist")
 var capitalize = flag.Bool("c", false, "Capitalize words")
 var pwcount = flag.Int("N", 1, "Number of passwords to generate")

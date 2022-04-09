@@ -44,8 +44,8 @@ func TestGenerator_GeneratePasswordWithCapitalization(t *testing.T) {
 
 func TestGenerator_SetLanguage(t *testing.T) {
 	g := NewGenerator()
-	err := g.UseLangWordlist("de")
-	assert.Equal(t, nil, err, "Setting language to \"de\" should not raise an error")
+	err := g.UseLangWordlist("en")
+	assert.Equal(t, nil, err, "Setting language to \"en\" should not raise an error")
 	password := g.GeneratePasswordString()
 	assert.Equal(t, 4, len(strings.Split(password, " ")), "not the right number of words for default settings")
 }
