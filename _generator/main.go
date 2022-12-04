@@ -1,22 +1,23 @@
 package main
 
 import (
-	"flag"
-	"io/ioutil"
-	"time"
-
 	"bufio"
+	"flag"
 	"fmt"
+	"io/ioutil"
 	"os"
 	"path"
 	"strings"
+	"time"
 
 	"golang.org/x/tools/imports"
 )
 
 var wordlists = map[string]string{
-	"eff_large_wordlist":       "en",
-	"eff_short_wordlist_2_0":   "en_eff_short",
+	"eff_large_wordlist":     "en",
+	"eff_short_wordlist_2_0": "en_eff_short",
+	"de-1296-v1-diceware":    "de_short",
+	"de-7776-v1-diceware":    "de",
 }
 
 var fn = flag.String("o", "xkcdpwgen/generated.go", "Name of the generated file")
@@ -68,7 +69,7 @@ var wordlists = map[string][]string{
 		panic(err)
 	}
 
-	err = ioutil.WriteFile(*fn, res, 0644)
+	err = ioutil.WriteFile(*fn, res, 0o644)
 	if err != nil {
 		panic(err)
 	}
