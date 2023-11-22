@@ -11,6 +11,7 @@ type Generator struct {
 	numwords   int
 	delimiter  string
 	capitalize bool
+	numbers    bool
 }
 
 // NewGenerator returns a new password generator with default values set
@@ -25,15 +26,32 @@ func (g *Generator) GeneratePassword() []byte {
 
 // GeneratePasswordString creates a randomized password returned as string
 func (g *Generator) GeneratePasswordString() string {
-	var words = make([]string, g.numwords)
+	words := make([]string, g.numwords)
 	for i := 0; i < g.numwords; i++ {
 		if g.capitalize {
 			words[i] = strings.Title(randomWord(g.wordlist))
-		} else {
-			words[i] = randomWord(g.wordlist)
+
+			continue
+		}
+		words[i] = randomWord(g.wordlist)
+	}
+
+	if g.numbers {
+		for i, word := range words {
+			rn := randomInteger(11)
+			if rn > 10 {
+				continue
+			}
+			words[i] = fmt.Sprintf("%s%d", word, rn)
 		}
 	}
+
 	return strings.Join(words, g.delimiter)
+}
+
+// SetRandomNumbers turns on/off the random number generation
+func (g *Generator) SetRandomNumbers(numbers bool) {
+	g.numbers = numbers
 }
 
 // SetNumWords sets the word count for the generator
